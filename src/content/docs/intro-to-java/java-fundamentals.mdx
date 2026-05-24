@@ -5,6 +5,7 @@ prev: intro-to-java/java-fundamentals
 next: false
 ---
 import Aside from '../../../components/Aside.astro';
+import Slides from '../../../components/Slides.astro';
 import ContentFigure from '../../../components/ContentFigure.astro';
 
 ## Syntax
@@ -14,9 +15,13 @@ If your code has a red line under it, first check whether the syntax is correct.
 You can also learn what’s wrong with your code when you put the cursor over the section of the code with the red line and read what the error message is.
 Error messages will not tell you exactly what's wrong with your code. If you’re unsure on what the error message means, you can look it up to get additional context. 
 
-<ContentFigure src="/java-fundamentals/ErrorExample1.png" />
-<ContentFigure src="/java-fundamentals/ErrorExample2.png" />
+<Slides>
+  ![Slide 1](/java-fundamentals/ErrorExample1.png)
+  An example of a syntax error (note the squiggly line)
 
+  ![Slide 2](/java-fundamentals/ErrorExample2.png)
+  An example of a syntax error popup
+</Slides>
 
 ## Variables 
 Variables are containers that are used to store information in a program. This could be a variable that holds the temperature or a variable that holds the speed of the motor. 
