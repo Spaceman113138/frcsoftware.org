@@ -31,11 +31,5 @@ public class MyAuto extends PeriodicOpMode {
    * which can have periods that differ from the main Robot instance.
    */
   @Override
-  public void periodic() {
-    if (autoTimer.hasElapsed(4.0)) { // Drive for 4 seconds after the start of auto
-      robot.drivetrain.arcadeDrive(0.0, 0.0); // Stop the drivetrain after 4 seconds
-    } else {
-      robot.drivetrain.arcadeDrive(0.5, 0.0); // Drive forward at half speed with no rotation
-    }
-  }
+  public void periodic() {}
 }
