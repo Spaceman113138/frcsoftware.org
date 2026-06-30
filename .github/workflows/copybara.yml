@@ -1,0 +1,45 @@
+name: Sync to Target Repos (Copybara)
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'examples/stage1/**'
+            - 'copy.bara.sky'
+            - '.github/workflows/copybara.yml'
+
+jobs:
+    copybara:
+        runs-on: ubuntu-latest
+
+        strategy:
+            # Run the workflows in parallel
+            matrix:
+                workflow:
+                    - rev_solution
+                    - ctre_solution
+                    # Uncomment the below workflows once the template directories are added to main
+                    # - rev_template
+                    # - ctre_template
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Configure Git Auth
+              run: |
+                  # Configure git to use your PAT for all HTTPS connections to GitHub
+                  git config --global url."https://x-access-token:${{ secrets.COPYBARA_PAT }}@github.com/".insteadOf "https://github.com/"
+
+            - name: Run Copybara via Docker
+              run: |
+                  docker run --rm \
+                    --entrypoint bash \
+                    -v ${{ github.workspace }}:/usr/src/app \
+                    -w /usr/src/app \
+                    -v ~/.gitconfig:/root/.gitconfig \
+                    ghcr.io/olivr/copybara:latest \
+                    -c "copybara migrate copy.bara.sky ${{ matrix.workflow }}"
