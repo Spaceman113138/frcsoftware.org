@@ -37,9 +37,12 @@ jobs:
 
             - name: Configure Git Auth
               run: |
+                  # Set global git user for commits
+                  git config --global user.name "Automated Sync"
+                  git config --global user.email "noreply@frcsoftware.org"
+
                   # Configure git to use your PAT for all HTTPS connections to GitHub
                   git config --global url."https://x-access-token:${{ secrets.COPYBARA_PAT }}@github.com/".insteadOf "https://github.com/"
-
             - name: Download Copybara
               run: wget https://github.com/google/copybara/releases/download/v20260629/copybara_deploy.jar
 
