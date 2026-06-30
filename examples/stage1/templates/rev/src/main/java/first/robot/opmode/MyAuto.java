@@ -12,7 +12,6 @@ import org.wpilib.system.Timer;
 @Autonomous(name = "My Auto", group = "Group 1")
 public class MyAuto extends PeriodicOpMode {
   private final Robot robot;
-  private Timer timer = new Timer();
 
   public MyAuto(Robot robot) {
     this.robot = robot;
@@ -20,7 +19,7 @@ public class MyAuto extends PeriodicOpMode {
 
   @Override
   public void start() {
-    timer.restart();
+    
   }
 
   @Override
