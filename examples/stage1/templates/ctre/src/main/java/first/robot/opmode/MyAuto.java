@@ -7,7 +7,6 @@ package first.robot.opmode;
 import first.robot.Robot;
 import org.wpilib.opmode.Autonomous;
 import org.wpilib.opmode.PeriodicOpMode;
-import org.wpilib.system.Timer;
 
 @Autonomous(name = "My Auto", group = "Group 1")
 public class MyAuto extends PeriodicOpMode {
@@ -19,9 +18,7 @@ public class MyAuto extends PeriodicOpMode {
   }
 
   @Override
-  public void start() {
-    
-  }
+  public void start() {}
 
   /*
    * This method runs periodically, using the same period as the Robot instance.
