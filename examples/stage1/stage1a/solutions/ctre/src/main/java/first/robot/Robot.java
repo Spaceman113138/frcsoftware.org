@@ -32,12 +32,12 @@ import org.wpilib.hardware.imu.OnboardIMU.MountOrientation;
 public class Robot extends OpModeRobot {
 
   // [DriveMotorsLeft]
-  public TalonFX leftLeader = new TalonFX(0, CANBus.systemcore(0));
+  private TalonFX leftLeader = new TalonFX(0, CANBus.systemcore(0));
   private TalonFX leftFollower = new TalonFX(1, CANBus.systemcore(0));
   // [/DriveMotorsLeft]
 
   // [DriveMotorsRight]
-  public TalonFX rightLeader = new TalonFX(2, CANBus.systemcore(0));
+  private TalonFX rightLeader = new TalonFX(2, CANBus.systemcore(0));
   private TalonFX rightFollower = new TalonFX(3, CANBus.systemcore(0));
   // [/DriveMotorsRight]
 
