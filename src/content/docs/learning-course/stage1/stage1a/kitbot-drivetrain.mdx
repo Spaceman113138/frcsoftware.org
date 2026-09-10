@@ -328,10 +328,10 @@ By extending `PeriodicOpMode` these classes gain a few useful functions that are
 Two blank `PeriodicOpMode`s, `MyTeleop.java` and `MyAuto.java` are provided under the `opmode` folder.
 
 To control the robot with joysticks a Teleop OpMode needs to be created that periodically gives the `DifferentialDrive` instance new values from the controller.
-First a instance of `NiDsXboxController` needs to be created.
+First a instance of `XboxController` needs to be created.
 This class has functions that provide the state of different buttons on the controller.
 Multiple controllers can be used at once so the Driver Station gives each a slot.
-The index provided in the constructor tells the `NiDsXboxController`which slot to listen too.
+The index provided in the constructor tells the `XboxController`which slot to listen too.
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label="CTRE">
