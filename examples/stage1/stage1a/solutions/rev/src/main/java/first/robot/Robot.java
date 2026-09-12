@@ -10,6 +10,7 @@ import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.util.CANPorts;
 import first.robot.simulation.DrivetrainSim;
 import first.robot.simulation.FuelSim;
 import first.robot.simulation.SingleFlywheelSim;
@@ -31,12 +32,12 @@ import org.wpilib.hardware.imu.OnboardIMU.MountOrientation;
 public class Robot extends OpModeRobot {
 
   // [DriveMotorsLeft]
-  private SparkMax leftLeader = new SparkMax(0, 0, MotorType.kBrushless);
-  private SparkMax leftFollower = new SparkMax(0, 1, MotorType.kBrushless);
+  private SparkMax leftLeader = new SparkMax(CANPorts.fromBusId(0), 0, MotorType.kBrushless);
+  private SparkMax leftFollower = new SparkMax(CANPorts.fromBusId(0), 1, MotorType.kBrushless);
   // [/DriveMotorsLeft]
   // [DriveMotorsRight]
-  private SparkMax rightLeader = new SparkMax(0, 2, MotorType.kBrushless);
-  private SparkMax rightFollower = new SparkMax(0, 3, MotorType.kBrushless);
+  private SparkMax rightLeader = new SparkMax(CANPorts.fromBusId(0), 2, MotorType.kBrushless);
+  private SparkMax rightFollower = new SparkMax(CANPorts.fromBusId(0), 3, MotorType.kBrushless);
   // [/DriveMotorsRight]
 
   // [DrivetrainInstance]
@@ -55,8 +56,8 @@ public class Robot extends OpModeRobot {
   // [/RobotWithSimPart1]
 
   // [AdditionalMotors]
-  public SparkMax intakeLauncher = new SparkMax(0, 4, MotorType.kBrushless);
-  public SparkMax feeder = new SparkMax(0, 5, MotorType.kBrushless);
+  public SparkMax intakeLauncher = new SparkMax(CANPorts.fromBusId(0), 4, MotorType.kBrushless);
+  public SparkMax feeder = new SparkMax(CANPorts.fromBusId(0), 5, MotorType.kBrushless);
   // [/AdditionalMotors]
 
   // [IntakeLauncherSim]
