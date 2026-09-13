@@ -89,6 +89,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             label: 'Interfaces, Generics, and Lists',
                             slug: 'learning-course/stage0/interfaces-lists',
                         },
+                        {
+                            label: 'Stage 0 Wrap-Up',
+                            slug: 'learning-course/stage0/stage-wrap-up',
+                        },
                     ],
                 },
                 {
@@ -108,6 +112,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                     slug: 'learning-course/stage1/stage1a/stage-overview',
                                 },
                                 {
+                                    label: 'Getting Started',
+                                    slug: 'learning-course/stage1/stage1a/getting-started',
+                                },
+                                {
                                     label: 'Kitbot Drivetrain',
                                     slug: 'learning-course/stage1/stage1a/kitbot-drivetrain',
                                 },
@@ -122,6 +130,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                 {
                                     label: 'Additional Motors',
                                     slug: 'learning-course/stage1/stage1a/kitbot-additional-motors',
+                                },
+                                {
+                                    label: 'Stage 1A Wrap-Up',
+                                    slug: 'learning-course/stage1/stage1a/stage-wrap-up',
                                 },
                             ],
                         },
@@ -172,6 +184,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                 {
                                     label: 'Bonus: Spot the Error, Pt 2',
                                     slug: 'learning-course/stage1/stage1b/spot-the-error-pt2',
+                                },
+                                {
+                                    label: 'Stage 1B Wrap-Up',
+                                    slug: 'learning-course/stage1/stage1b/stage-wrap-up',
                                 },
                             ],
                         },
@@ -274,10 +290,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 { label: 'Documentation', slug: 'resources/docs' },
                 { label: 'Hardware', slug: 'resources/hardware-intro' },
                 { label: 'Examples', slug: 'resources/examples' },
-                {
-                    label: 'Transitioning to Commands V3',
-                    slug: 'resources/transitioning-to-commands-v3',
-                },
             ],
         },
     ],
@@ -369,10 +381,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 {
                     label: 'Documentation',
                     slug: 'resources/docs',
-                },
-                {
-                    label: 'Transitioning to Commands V3',
-                    slug: 'resources/transitioning-to-commands-v3',
                 },
             ],
         },
