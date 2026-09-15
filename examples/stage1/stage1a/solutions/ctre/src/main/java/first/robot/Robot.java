@@ -32,13 +32,13 @@ import org.wpilib.hardware.imu.OnboardIMU.MountOrientation;
 public class Robot extends OpModeRobot {
 
   // [DriveMotorsLeft]
-  private TalonFX leftLeader = new TalonFX(0, CANBus.systemcore(0));
-  private TalonFX leftFollower = new TalonFX(1, CANBus.systemcore(0));
+  private final TalonFX leftLeader = new TalonFX(0, CANBus.systemcore(0));
+  private final TalonFX leftFollower = new TalonFX(1, CANBus.systemcore(0));
   // [/DriveMotorsLeft]
 
   // [DriveMotorsRight]
-  private TalonFX rightLeader = new TalonFX(2, CANBus.systemcore(0));
-  private TalonFX rightFollower = new TalonFX(3, CANBus.systemcore(0));
+  private final TalonFX rightLeader = new TalonFX(2, CANBus.systemcore(0));
+  private final TalonFX rightFollower = new TalonFX(3, CANBus.systemcore(0));
   // [/DriveMotorsRight]
 
   // [DrivetrainInstance]
@@ -47,25 +47,26 @@ public class Robot extends OpModeRobot {
   // [/DrivetrainInstance]
 
   // [IMU]
-  private OnboardIMU imu = new OnboardIMU(MountOrientation.FLAT);
+  private final OnboardIMU imu = new OnboardIMU(MountOrientation.FLAT);
   // [/IMU]
   // [/RobotTop]
 
   // [DrivetrainSim]
-  private DrivetrainSim drivetrainSim = new DrivetrainSim(leftLeader, rightLeader);
+  private final DrivetrainSim drivetrainSim = new DrivetrainSim(leftLeader, rightLeader);
   // [/DrivetrainSim]
   // [/RobotWithSimPart1]
 
   // [AdditionalMotors]
-  public TalonFX intakeLauncher = new TalonFX(4, CANBus.systemcore(0));
-  public TalonFX feeder = new TalonFX(5, CANBus.systemcore(0));
+  public final TalonFX intakeLauncher = new TalonFX(4, CANBus.systemcore(0));
+  public final TalonFX feeder = new TalonFX(5, CANBus.systemcore(0));
   // [/AdditionalMotors]
 
   // [IntakeLauncherSim]
-  private SingleFlywheelSim intakeLauncherSim = SingleFlywheelSim.forIntakeLauncher(intakeLauncher);
+  private final SingleFlywheelSim intakeLauncherSim =
+      SingleFlywheelSim.forIntakeLauncher(intakeLauncher);
   // [/IntakeLauncherSim]
   // [FeederSim]
-  private SingleFlywheelSim feederSim = SingleFlywheelSim.forFeeder(feeder);
+  private final SingleFlywheelSim feederSim = SingleFlywheelSim.forFeeder(feeder);
 
   // [/FeederSim]
 
@@ -77,7 +78,7 @@ public class Robot extends OpModeRobot {
    */
   public Robot() {
     // [MotorConfigCreationLeft]
-    var leftConfig = new TalonFXConfiguration();
+    TalonFXConfiguration leftConfig = new TalonFXConfiguration();
     // [/MotorConfigCreationLeft]
     // [MotorConfigSetLeft]
     leftConfig.MotorOutput.withInverted(InvertedValue.Clockwise_Positive);
@@ -90,7 +91,7 @@ public class Robot extends OpModeRobot {
     // [/MotorConfigLeft]
 
     // [MotorConfig]
-    var rightConfig = new TalonFXConfiguration();
+    TalonFXConfiguration rightConfig = new TalonFXConfiguration();
     rightConfig.MotorOutput.withInverted(InvertedValue.CounterClockwise_Positive);
     rightLeader.getConfigurator().apply(rightConfig);
     rightFollower.getConfigurator().apply(rightConfig);
