@@ -184,7 +184,7 @@ It's important to remember that settings only get changed when the configuration
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label = "CTRE">
-        For CTRE Motor Controllers, following a different motor controller is a `ControlRequest` instead of a configuration.
+        For CTRE motor controllers, following a different motor controller is a `ControlRequest` instead of a configuration.
         `leaderMotor.getDeviceID()` is used to get the CAN Id to follow so their is a single source of truth.
         The helps prevent errors because if the leader CAN Id ever changes, the code only needs to be updated in one spot.
 
@@ -194,7 +194,7 @@ It's important to remember that settings only get changed when the configuration
     </TabItem>
     <TabItem label = "REV">
         For REV Motor Controllers, becoming a follower is a configuration so the follower setting gets changed before being applied to the follower motor using the leader motor as the function parameter.
-        This must happen after the configuration is applied to the Leader so the Leading motor controller doesn't want to follow itself.
+        This must happen after the configuration is applied to the leader so the leading motor controller doesn't want to follow itself.
         `ResetMode.kResetSafeParameters` gets to tell the motor controller to reset all unchanged configurations to their default value.
         This prevents old configurations from being left on the controller.
         `PersistMode.kPersistParameters` is used so the configuration gets saved on the motor controller so it persists even after power is removed.
