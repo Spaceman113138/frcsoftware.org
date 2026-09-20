@@ -1,8 +1,6 @@
 ---
 title: Exercise - Kitbot Rewrite, Pt. 1
 description: Rewriting the kitbot code in stage 1A to command-based
-prev: learning-course/stage1/stage1b/commands-and-mechanisms-pt2
-next: learning-course/stage1/stage1b/suppliers-in-command-based
 codeRegionSources:
     default: stage1/stage1b/snippets/src/main/java/sources/CommandBasedKitbot.java
 ---
@@ -160,6 +158,7 @@ to allow for simulation to work:
 ```
 
 This code creates a `SingleFlywheelSim` object named `sim` that simulates the feeder by representing it as a single spinning flywheel, then updates the simulation in `sim.periodic()`.
+The code checks if it is being simulated before updating the sim so the simulation code is not run when the robot is real.
 
 ### Task 3: The IntakeLauncher Mechanism
 
