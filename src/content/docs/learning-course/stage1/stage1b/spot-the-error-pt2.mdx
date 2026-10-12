@@ -1,8 +1,6 @@
 ---
 title: Spot the Error, Part 2
 description: A review exercise for stage 1B
-prev: learning-course/stage1/stage1b/command-based-kitbot-pt2
-next: learning-course/stage1/stage1c/stage-overview
 codeRegionSources:
     default: stage1/stage1b/snippets/src/main/java/sources/SpotTheErrorPt2.java
 ---
@@ -16,8 +14,7 @@ Can you spot the error?
 
 ```
 
-<details class="accordion">
-    <summary>Reveal</summary>
+<Aside type="answer">
     The scheduler never runs, so scheduled commands never execute.
     Call `Scheduler.getDefault().run()` inside `robotPeriodic()`:
 
@@ -25,7 +22,7 @@ Can you spot the error?
 
     ```
 
-</details>
+</Aside>
 
 ### Exercise 2
 
@@ -37,8 +34,7 @@ This command is supposed to drive the robot using the joystick's forward and rot
 
 Can you spot the error?
 
-<details class="accordion">
-    <summary>Reveal</summary>
+<Aside type="answer">
     The supplier values are read once, before the command starts running.
     The robot drives at the same speed and rotation forever, even as the joystick moves.
     Read the values from the suppliers inside the loop instead:
@@ -47,4 +43,4 @@ Can you spot the error?
 
     ```
 
-</details>
+</Aside>

@@ -1,8 +1,6 @@
 ---
 title: Kitbot Drivetrain
 description: Programming the kitbot drivetrain
-prev: stage-overview
-next: drivetrain-sim
 codeRegionSources:
     ctreRobot: stage1/stage1a/solutions/ctre/src/main/java/first/robot/Robot.java
     revRobot: stage1/stage1a/solutions/rev/src/main/java/first/robot/Robot.java
@@ -68,6 +66,10 @@ This is how the motor controller objects for the left motors will look.
         ```java {ctreRobot}#DriveMotorsLeft
         ```
 
+        CTRE uses a `CANBus` that is constructed with a `CANPort enum to specify which of Systemcore's CANBuses the device is connected too.
+        This enum is a field in the `CANPort` class and only CAN_S0 through CAN_S4 will ever be used since Systemcore only has five CAN Busses.
+
+
     </TabItem>
     <TabItem label = "REV">
         ```java {revRobot}#DriveMotorsLeft
@@ -87,8 +89,7 @@ Setting a NEO to `MotorType.kBrushed` will break the NEO.
 
 Now try creating the right motor controllers on your own.
 
-<details class="accordion">
-    <summary>Solution</summary>
+<Aside type="answer" title="Solution">
     <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
         <TabItem label="CTRE">
 
@@ -104,7 +105,7 @@ Now try creating the right motor controllers on your own.
         </TabItem>
     </Tabs>
 
-</details>
+</Aside>
 
 # Motor Controller Configuration
 
@@ -209,8 +210,7 @@ It's important to remember that settings only get changed when the configuration
 Now try configuring the right motor controllers on your own.
 Remember that some of the configurations may be different.
 
-<details class="accordion">
-    <summary>Solution</summary>
+<Aside type="answer" title="Solution">
     <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
         <TabItem label="CTRE">
 
@@ -226,7 +226,7 @@ Remember that some of the configurations may be different.
         </TabItem>
     </Tabs>
 
-</details>
+</Aside>
 
 # Arcade Drive
 
@@ -304,8 +304,7 @@ An instance of Systemcore's IMU should be created beneath the `differentialDrive
 
 By now your `Robot` class in `Robot.java` should look like this and VS code should not be giving you any errors.
 
-<details class="accordion">
-    <summary>Solution</summary>
+<Aside type="answer" title="Solution">
     <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
         <TabItem label="CTRE">
 
@@ -325,7 +324,7 @@ By now your `Robot` class in `Robot.java` should look like this and VS code shou
         </TabItem>
     </Tabs>
 
-</details>
+</Aside>
 
 # OpModes
 
@@ -392,8 +391,7 @@ This allows the Opmode to access the methods and fields of the `Robot` class.
 
 At this point `MyTeleop.java` should look like this
 
-<details class="accordion">
-    <summary>Solution</summary>
+<Aside type="answer" title="Solution">
     <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
         <TabItem label="CTRE">
 
@@ -409,4 +407,4 @@ At this point `MyTeleop.java` should look like this
         </TabItem>
     </Tabs>
 
-</details>
+</Aside>
